@@ -6,7 +6,7 @@ import numpy as np
 from datetime import datetime
 from scipy.signal import find_peaks
 
-from logger import Logger
+from utils.logger import Logger
 
 class Listener():
     def __init__(self, logger):
