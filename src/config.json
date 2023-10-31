@@ -1,0 +1,10 @@
+{
+    "sender_email" : "",
+    "reciever_email" : "",
+    "reciever_phone" : "",
+    "email_pwd" : "",
+    "smtp_server" : "smtp.gmail.com",
+    "smtp_port" : 587,
+    "txt_gate" : "",
+    "multi_media_gate" : ""
+}
