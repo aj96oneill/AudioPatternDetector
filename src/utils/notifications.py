@@ -7,7 +7,14 @@ from email.mime.image import MIMEImage
 
 class EMailInterface():
     def __init__(self, logger, payload):
-        self.__dict__.update(payload)
+        self.sender_email = payload.get("sender_email", "")
+        self.reciever_email = payload.get("reciever_email", "")
+        self.reciever_phone = payload.get("reciever_phone", "")
+        self.email_pwd = payload.get("email_pwd", "")
+        self.smtp_server = payload.get("smtp_server", "smtp.gmail.com")
+        self.smtp_port = payload.get("smtp_port", 587) 
+        self.txt_gate = payload.get("txt_gate", "") 
+        self.multi_media_gate = payload.get("multi_media_gate", "")
         self.logger = logger
 
     def send_email(self, subject, message="", evidence=None, debug_img=None):

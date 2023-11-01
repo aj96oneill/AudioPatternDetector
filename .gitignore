@@ -1,5 +1,5 @@
 # .gitignore
+# (git update-index --skip-worktree src/config.json) 
 
 *.png
-src/config.json
 *.pyc

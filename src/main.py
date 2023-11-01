@@ -22,11 +22,11 @@ if __name__ == "__main__":
     ears = Listener(logger)
     eyes = Camera(logger)
     mouth = EMailInterface(logger, payload)
-    brain = CPUTemperature()
+    body = CPUTemperature()
     try:
         logger.info("Listening...")
         while True:
-            if brain.temperature < 75:
+            if body.temperature < 75:
                 audio_data = np.frombuffer(ears.stream.read(ears.chunk), dtype=np.int16)
                 resp = ears.check_for_noise(audio_data)
                 if resp:
@@ -46,7 +46,7 @@ if __name__ == "__main__":
                     if EMAIL:
                         mouth.send_email(subject, message, pic_path, audio_path)
             else:
-                mouth.send_email("Pi Getting Hot", f"Temp was {brain.temperature}C. Sleeping for 30 sec")
+                mouth.send_email("Pi Getting Hot", f"Temp was {body.temperature}C. Sleeping for 30 sec")
                 time.sleep(30)
     except KeyboardInterrupt:
         logger.info("Stopping listener")

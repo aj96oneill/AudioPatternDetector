@@ -64,7 +64,10 @@ class Listener():
         plt.plot(w, fourier_to_plot)
         plt.xlabel('frequency')
         plt.ylabel('amplitude')
-        plt.savefig(f"{path}/{name}")
+        save_path = f"{path}/{name}"
+        plt.savefig(save_path)
+        plt.close()
+        return save_path
     
     def check_for_noise(self, audio_data):
         fourier_audio = np.fft.fft(audio_data)
